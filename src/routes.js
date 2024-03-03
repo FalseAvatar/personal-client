@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Homepage } from "./components/Homepage";
-import { About } from "./components/About";
-import { Read } from "./components/posts/Read";
-import { Write } from "./components/posts/Write";
+import { Homepage } from "./pages/Homepage";
+import { About } from "./pages/About";
+import { Read } from "./pages/Read";
+import { Write } from "./pages/Write";
+import { Article } from "./components/articles/Article";
 import { LogIn } from "./auth/LogIn";
 import { App } from "./App";
 import React from "react";
@@ -24,6 +25,11 @@ export const router = createBrowserRouter([
         path: "/Read",
         element: <Read />,
       },
+      {
+        path: "Read/:id",
+        element: <Article />,
+      },
+
       {
         path: "/Write",
         element: <Write />,
