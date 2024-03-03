@@ -4,7 +4,7 @@ import { About } from "./pages/About";
 import { Read } from "./pages/Read";
 import { Write } from "./pages/Write";
 import { Article } from "./components/articles/Article";
-import { LogIn } from "./auth/LogIn";
+import { LogIn } from "./pages/LogIn";
 import { App } from "./App";
 import React from "react";
 
