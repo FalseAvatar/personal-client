@@ -4,9 +4,11 @@ export const ArticleContext = createContext(null);
 
 export function ArticleProvider({ children }) {
   const [articles, setArticles] = useState([]);
-
+  const [article, setArticle] = useState([]);
   return (
-    <ArticleContext.Provider value={{ articles, setArticles }}>
+    <ArticleContext.Provider
+      value={{ articles, setArticles, article, setArticle }}
+    >
       {children}
     </ArticleContext.Provider>
   );

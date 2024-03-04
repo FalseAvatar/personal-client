@@ -1,11 +1,14 @@
-import { ArticleContext } from "../../providers/ArticleProvider";
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { getArticle } from "../../apis/articlesAPI/getArticle";
 
 export function Article() {
   const { id } = useParams();
-  const { articles } = useContext(ArticleContext);
-  const article = articles[id - 2];
+  const [article, setArticle] = useState([]);
+  //const article = articles[id - 2];
+  useEffect(() => {
+    getArticle(article, setArticle, id);
+  }, [article, setArticle, id]);
 
   return (
     <div>

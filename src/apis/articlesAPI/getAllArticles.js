@@ -1,6 +1,4 @@
 import articleServer from "../articleServer";
-import { ArticleContext } from "../../providers/ArticleProvider";
-import { useContext } from "react";
 
 export async function getAllArticles(setArticles) {
   try {
