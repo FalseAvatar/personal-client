@@ -4,8 +4,8 @@ import { useParams } from "react-router-dom";
 
 export function Article() {
   const { id } = useParams();
-  const articles = useContext(ArticleContext);
-  const article = articles[id - 1];
+  const { articles } = useContext(ArticleContext);
+  const article = articles[id - 2];
 
   return (
     <div>
