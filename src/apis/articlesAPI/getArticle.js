@@ -1,6 +1,6 @@
 import articleServer from "../articleServer";
 
-export async function getArticle(article, setArticle, id) {
+export async function getArticle(setArticle, id) {
   try {
     const response = await articleServer.get(`/${id}`);
     console.log(response.data);

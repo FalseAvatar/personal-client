@@ -4,6 +4,7 @@ import { About } from "./pages/About";
 import { Read } from "./pages/Read";
 import { Write } from "./pages/Write";
 import { Article } from "./components/articles/Article";
+import { UpdateArticle } from "./pages/UpdateArticle";
 import { LogIn } from "./pages/LogIn";
 import { App } from "./App";
 import React from "react";
@@ -26,10 +27,13 @@ export const router = createBrowserRouter([
         element: <Read />,
       },
       {
-        path: "Read/:id",
+        path: "/Read/:id",
         element: <Article />,
       },
-
+      {
+        path: "/Read/:id/Update",
+        element: <UpdateArticle />,
+      },
       {
         path: "/Write",
         element: <Write />,

@@ -1,12 +1,14 @@
 import { useForm } from "react-hook-form";
-import React, { useContext } from "react";
-import { ArticleContext } from "../providers/ArticleProvider";
+import React from "react";
+import { addArticle } from "../apis/articlesAPI/addArticle";
+import { useNavigate } from "react-router-dom";
 
 export function Write() {
   const { register, handleSubmit } = useForm();
-  const articles = useContext(ArticleContext);
+  const navigate = useNavigate();
   const onSubmit = (data, e) => {
-    articles.push(data);
+    addArticle(data);
+    navigate("/Read/");
   };
 
   return (

@@ -4,11 +4,14 @@ import { getArticle } from "../../apis/articlesAPI/getArticle";
 
 export function Article() {
   const { id } = useParams();
-  const [article, setArticle] = useState([]);
+  const [article, setArticle] = useState({});
   //const article = articles[id - 2];
   useEffect(() => {
-    getArticle(article, setArticle, id);
-  }, [article, setArticle, id]);
+    getArticle(setArticle, id);
+    return () => {
+      setArticle({});
+    };
+  }, [setArticle, id]);
 
   return (
     <div>
