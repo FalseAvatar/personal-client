@@ -1,13 +1,12 @@
 import articleServer from "../articleServer";
 
 export async function updateArticle(id, data) {
-  const newArticle = {
-    title: data.title,
-    intro: data.intro,
-    article: data.article,
-  };
   try {
-    await articleServer.put(`/${id}`, newArticle);
+    await articleServer.put(`/${id}`, data, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   } catch (error) {
     console.error("Error posting article:", error);
   }
